@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ogqv60mrjmh"]
+
+[ext_resource type="Texture2D" uid="uid://pwu0ex6f1p8" path="res://resources/sprites/mouse_select.png" id="1_h4k1o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wil5"]
+size = Vector2(14, 14)
+
+[node name="MouseSelect" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h4k1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+shape = SubResource("RectangleShape2D_7wil5")

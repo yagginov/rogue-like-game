@@ -7,6 +7,7 @@ using namespace godot;
 
 void NPC::_bind_methods() 
 {
+	
 }
 
 

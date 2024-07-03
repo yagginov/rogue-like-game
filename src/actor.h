@@ -3,6 +3,7 @@
 
 #include <godot_cpp/classes/character_body2d.hpp>
 #include <godot_cpp/variant/vector2i.hpp>
+#include <godot_cpp/variant/vector2.hpp>
 
 #include "atack_type.h"
 
@@ -19,7 +20,12 @@ private:
     int max_hp;
     int hp;
     size_t index;
-    Vector2i position;
+    Vector2i positioni;
+
+    double speed;
+
+public:
+    bool is_step_allowed;
 
 public:
 	Actor();
@@ -30,15 +36,21 @@ public:
 	void _process(double delta) override;
 	void _physics_process(double delta) override;
 
-    void move(const Vector2i& direction);
+    bool move(const Vector2i& direction, double delta);
     void atack(const lehit::AtackType& atack_type);
     void take_damage(const int damage);
 
     void set_max_hp(const int p_max_hp);
     int get_max_hp() const;
 
-    void set_position(const Vector2i& p_position);
-    Vector2i get_position() const;
+    void set_speed(const double p_speed);
+    double get_speed() const;
+
+    void set_positioni(const Vector2i& p_position);
+    Vector2i get_positioni() const;
+
+    void step_is_ended();
+    void make_step();
 
 };
 
