@@ -2,6 +2,9 @@
 #define GOD_H
 
 #include <godot_cpp/classes/node2d.hpp>
+#include <godot_cpp/templates/vector.hpp>
+
+#include "level.h"
 
 
 namespace godot {
@@ -11,6 +14,9 @@ class God : public Node2D {
 
 protected:
 	static void _bind_methods();
+
+private:
+	Vector<Level*> levels;
 
 public:
 	God();

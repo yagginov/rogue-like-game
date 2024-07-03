@@ -7,6 +7,10 @@
 #include <godot_cpp/godot.hpp>
 
 #include "god.h"
+#include "level.h"
+#include "actor.h"
+#include "main_character.h"
+#include "non_playable_character.h"
 
 using namespace godot;
 
@@ -16,6 +20,10 @@ void initialize_module(ModuleInitializationLevel p_level) {
 	}
 
 	GDREGISTER_CLASS(God);
+	GDREGISTER_CLASS(Level);
+	GDREGISTER_CLASS(Actor);
+	GDREGISTER_CLASS(MC);
+	GDREGISTER_CLASS(NPC);
 }
 
 void uninitialize_module(ModuleInitializationLevel p_level) {

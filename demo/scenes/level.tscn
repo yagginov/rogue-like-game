@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceot0wipfm6j2"]
+
+[ext_resource type="PackedScene" uid="uid://bj8d3kii402lg" path="res://scenes/mc.tscn" id="1_retuf"]
+
+[node name="Level" type="Level"]
+
+[node name="MC" parent="." instance=ExtResource("1_retuf")]
+position = Vector2i(174, 161)
+position = Vector2i(174, 161)
