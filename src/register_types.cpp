@@ -11,6 +11,7 @@
 #include "actor.h"
 #include "main_character.h"
 #include "non_playable_character.h"
+#include "enemy.h"
 
 using namespace godot;
 
@@ -24,6 +25,7 @@ void initialize_module(ModuleInitializationLevel p_level) {
 	GDREGISTER_CLASS(Actor);
 	GDREGISTER_CLASS(MC);
 	GDREGISTER_CLASS(NPC);
+	GDREGISTER_CLASS(Enemy);
 }
 
 void uninitialize_module(ModuleInitializationLevel p_level) {

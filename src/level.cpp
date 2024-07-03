@@ -19,17 +19,14 @@ void Level::_bind_methods()
 Level::Level() 
 {
 	// Initialize any variables here.
-
 	i = nullptr;
 	mouse_select = nullptr;
 	camera = nullptr;
+	camera_speed = 200;
 
 	count_of_steps = 0;
-
 	current_step = true;
-	current_obj = -1;
 
-	camera_speed = 200;
 }
 
 Level::~Level() 
@@ -42,6 +39,12 @@ void Level::_ready()
     i = Input::get_singleton();
 	mouse_select = get_node<Area2D>("MouseSelect");
 	camera = get_node<Camera2D>("Camera");
+
+	v_npc.push_back(get_node<Enemy>("Enemy"));
+	v_npc.push_back(get_node<NPC>("NPC"));
+
+	angry_npc.insert(0);
+	angry_npc.insert(1);
 
 	mc = get_node<MC>("MC");
 	mc->connect("step_ended", Callable(this, "_step_ended"));
@@ -79,7 +82,7 @@ void Level::_physics_process(double delta)
 		}
 		else
 		{
-			current_obj = *queue.begin();
+			int current_obj = *queue.begin();
 			queue.pop_front();
 			current_step = false;
 
@@ -95,11 +98,6 @@ void Level::_physics_process(double delta)
 	}
 	
 	
-}
-
-Vector2i Level::get_mouse_position()
-{
-	return mouse_position;
 }
 
 void Level::set_mouse_position()

@@ -10,17 +10,16 @@
 namespace godot
 {
 
-
-enum States
-{
-	idle = 0,
-	move = 1,
-	atack = 2
-};
-
-
 class MC : public Actor {
 	GDCLASS(MC, Actor)
+
+private:
+	enum States
+	{
+		idle = 0,
+		move = 1,
+		atack = 2
+	};
 
 protected:
 	static void _bind_methods();
@@ -28,12 +27,10 @@ protected:
 private:
 	Input *i;
 	Vector2i mouse_position;
-
 	Vector2i direction;
+	States state;
 
 	void set_mouse_position();
-
-	States state;
 
 public:
 	MC();

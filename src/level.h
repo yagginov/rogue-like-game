@@ -14,6 +14,7 @@
 
 #include "main_character.h"
 #include "non_playable_character.h"
+#include "enemy.h"
 
 
 namespace godot {
@@ -28,20 +29,22 @@ private:
     MC* mc;
     Vector<NPC*> v_npc;
 	HashSet<int> angry_npc;
+	
+	Vector2i mouse_position;
 
 	List<int> queue;
-
-    Input *i;
-	Vector2i mouse_position;
+	bool current_step;
+	size_t count_of_steps;
+    
+	Input *i;
 	Area2D* mouse_select;
-
 	Camera2D* camera;
 
 	double camera_speed;
 
-	bool current_step;
-	int current_obj;
-	size_t count_of_steps;
+private:
+	void set_mouse_position();
+	void init_queue();
 
 public:
 	Level();
@@ -51,9 +54,6 @@ public:
 	void _process(double delta) override;
 	void _physics_process(double delta) override;
 
-	Vector2i get_mouse_position();
-	void set_mouse_position();
-	void init_queue();
 	void _step_ended();
 
 	void set_camera_speed(const double p_camera_speed);

@@ -24,7 +24,7 @@ private:
 
     double speed;
 
-public:
+protected:
     bool is_step_allowed;
 
 public:
@@ -37,8 +37,11 @@ public:
 	void _physics_process(double delta) override;
 
     bool move(const Vector2i& direction, double delta);
-    void atack(const lehit::AtackType& atack_type);
+    virtual void atack();
     void take_damage(const int damage);
+
+    void step_is_ended();
+    void make_step();
 
     void set_max_hp(const int p_max_hp);
     int get_max_hp() const;
@@ -48,10 +51,6 @@ public:
 
     void set_positioni(const Vector2i& p_position);
     Vector2i get_positioni() const;
-
-    void step_is_ended();
-    void make_step();
-
 };
 
 }   // namespace godot

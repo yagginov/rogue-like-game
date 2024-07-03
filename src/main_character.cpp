@@ -58,7 +58,7 @@ void MC::_physics_process(double delta)
 			break;
 
 		case States::move:
-			if (!move(direction, delta))
+			if (!Actor::move(direction, delta))
 			{
 				state = States::idle;
 				set_positioni(get_positioni() + direction);
@@ -73,7 +73,7 @@ void MC::set_mouse_position()
 {
 	Vector2i global_mouse_pos = cast_to<Node2D>(this->get_parent())->get_global_mouse_position();
 	mouse_position = Vector2i(global_mouse_pos.x >> 4, global_mouse_pos.y >> 4);
-	
+
 }
 
 

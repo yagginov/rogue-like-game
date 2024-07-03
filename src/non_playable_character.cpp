@@ -40,5 +40,13 @@ void NPC::_process(double delta)
 
 void NPC::_physics_process(double delta) 
 {
-
+	if (is_step_allowed)
+	{
+		Vector2i direction = Vector2i(1, 0);
+		if (!Actor::move(direction, delta))
+		{
+			set_positioni(get_positioni() + direction);
+			step_is_ended();
+		}
+	}
 }

@@ -86,7 +86,7 @@ bool Actor::move(const Vector2i& direction, double delta)
 
 }
 
-void Actor::atack(const lehit::AtackType& atack_type)
+void Actor::atack()
 {
 
 }
