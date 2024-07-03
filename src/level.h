@@ -35,7 +35,9 @@ private:
 	Vector2i mouse_position;
 	Area2D* mouse_select;
 
-	
+	Camera2D* camera;
+
+	double camera_speed;
 
 	bool current_step;
 	int current_obj;
@@ -53,6 +55,9 @@ public:
 	void set_mouse_position();
 	void init_queue();
 	void _step_ended();
+
+	void set_camera_speed(const double p_camera_speed);
+	double get_camera_speed() const;
 
 };
 

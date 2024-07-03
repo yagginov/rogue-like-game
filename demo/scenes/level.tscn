@@ -60,8 +60,8 @@ sources/0 = SubResource("TileSetAtlasSource_edu7u")
 
 [node name="Level" type="Level"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(202, 186)
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(240, 172)
 zoom = Vector2(6, 6)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -76,4 +76,4 @@ position = Vector2(184, 184)
 motion_mode = 1
 
 [node name="MouseSelect" parent="." instance=ExtResource("3_vvl01")]
-position = Vector2(168, 168)
+position = Vector2(232, 200)
